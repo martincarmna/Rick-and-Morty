@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    background-image: url("https://wallpaperaccess.com/full/3958025.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h2{
+    text-align: center;
+}
+.logo img{
+    width: 20;
+    ;
+}
+img{
+    border-radius: 40px;
+    align-items: center;
+    margin: 0 auto;
+    
+
+}
+p{
+    color: black;
+    text-align: center;
+    text-overflow: inherit;
+}
+h2:hover{
+    color: greenyellow;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 1px 0 15px black;
+    
+}
+.card{
+    text-align: center;
+    display: grid ;
+    box-shadow: 1px 0 15px black;
+    background-color: white;
+    border-radius: 40px;
+}
+.card:hover{
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+    
+}
+.logo img{
+    width: 20;
+    ;
+}
+nav{
+/*
+    
+    background-image: url('https://logos-marcas.com/wp-content/uploads/2022/01/Rick-And-Morty-Emblema.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: fixed;*/
+    background-color: black;
+    width: 100%;
+    height: 200px;
+}
+
+.container{
+    position: relative;
+    top: -200px;
+    align-items: center;
+    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 220px;
+    
+}
+ .nave{
+     position: relative; 
+  top: -250px; /* mueve 50px hacia arriba */
+
+    margin: 0 auto;
+    width: 150px;   
+    height: 150px;
+    object-fit: cover;
+
+ }
+ .search{
+  position: relative; 
+  top: -100px; /* mueve 50px hacia arriba */
+  margin-left: 80%;
+
+ }
+    .search input{
+        width: 200px;
+        height: 30px;
+        border-radius: 15px;
+        text-align: center;
+    }
+    .search button{
+        width: 70px;
+        height: 36px;
+        border-radius: 15px;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+    }
+    .search button:hover{
+        background-color: greenyellow;
+        color: black;
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+    }
