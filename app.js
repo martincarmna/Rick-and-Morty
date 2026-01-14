@@ -10,19 +10,29 @@ const card = character => {
             <h2>${character.name}</h2>
             <p>Status: ${character.status}</p>
             <p>Species: ${character.species}</p>
+            <button class="btn" data-id="${character.id}">ID</button>
             
         </div>`
 
     div.innerHTML = html
-    container.appendChild(div)
+    return div
+}
+const getId  = (e) =>{
+    if(e.target.classList.contains('btn')){
+        const id = e.target.getAttribute('data-id')
+        alert(id)
+    }
 }
 
-fetch(url)
+const page = Math.ceil(Math.random() * 42);
+fetch(`${url}/?page=${page}`)
  .then(Response => Response.json())
  .then(data => {
     data.results.forEach(character => {
-        card(character) 
+        container.appendChild(card(character))
 
         
     });
  })
+
+ container.addEventListener('click', getId)
