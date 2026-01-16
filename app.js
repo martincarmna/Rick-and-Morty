@@ -1,6 +1,8 @@
 const url = 'https://rickandmortyapi.com/api/character';
 const container = document.querySelector(".container");
 const details = document.querySelector(".details");
+const searchButton = document.getElementById("searchButton");
+const searchInput = document.getElementById("searchInput");
 
 // Variable para guardar el personaje actual
 let currentCharacter = null;
@@ -49,6 +51,7 @@ const getId = (e) => {
     }
 };
 
+
 // Evento para regresar
 details.addEventListener('click', (e) => {
     if (e.target.id === 'backBtn') {
@@ -65,5 +68,30 @@ fetch(url + '?page=' + page)
             container.appendChild(characterCard);
         });
     });
+
+const searchCharacter = () => {
+    const name = searchInput.value.trim();
+
+    if (name === "") return;
+
+    container.innerHTML = ""; 
+
+    fetch(url + `/?name=${name}`)
+        .then(response => {
+            if (!response.ok) throw new Error("No encontrado");
+            return response.json();
+        })
+        .then(data => {
+            data.results.forEach(character => {
+                const characterCard = card(character);
+                container.appendChild(characterCard);
+            });
+        })
+        .catch(() => {
+            container.innerHTML = "<p>No se encontraron personajes</p>";
+        });
+};
+searchButton.addEventListener('click', searchCharacter);
+
 
 container.addEventListener('click', getId);
